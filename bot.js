@@ -13,11 +13,18 @@ var Aa = "오늘의 한강 수온은...";
 var Bb = "도네요. 함께가자!";
 **/
 
-bot.on('/today_hangang', (msg) => {
+bot.on('message', (msg) => {
 
-    const chatId = msg.chat.id;
+var hi = "hi";
+if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
+bot.sendMessage(msg.chat.id,"Hello dear user");
+} 
+    
+var bye = "bye";
+if (msg.text.toString().toLowerCase().includes(bye)) {
+bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
+} 
 
-    bot.sendMessage(chatId, 'Hello!');
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
