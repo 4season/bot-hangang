@@ -11,7 +11,7 @@ const getToken = (function(){
 var Aa = "오늘의 한강 수온은...";
 var Bb = "도네요. 함께가자!";
 
-bot.on(/\/today_hangang_temperature/, (msg) => {
+bot.on('/today_hangang_temperature', (msg) => {
 
     const chatId = msg.chat.id;
 
