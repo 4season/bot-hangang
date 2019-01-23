@@ -15,7 +15,7 @@ bot.onText(/\/today_hangang_temperature/, (msg, match) => {
 
     const chatId = msg.chat.id;
 
-    bot.sendMessage(chatId, "oh, hello!");
+    bot.sendMessage(chatId, 'oh, hello!');
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
