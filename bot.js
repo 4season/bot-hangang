@@ -9,7 +9,7 @@ const getToken = (function(){
 
 const bot = new TelegramBot(getToken(), {polling: true});
 
-bot.onText(/\/abc (.+)/, (msg, match) => {
+bot.onText(/\/echo (.+)/, (msg, match) => {
 
     const chatId = msg.chat.id;
     const resp = match[1];
