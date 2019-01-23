@@ -11,12 +11,12 @@ const getToken = (function(){
 var Aa = "오늘의 한강 수온은...";
 var Bb = "도네요. 함께가자!";
 
-bot.on('/today_hangang_temperature', (msg) => {
+bot.onText(/\/today_hangang_temperature/, (msg, match) => {
 
     const chatId = msg.chat.id;
 
-    bot.sendMessage(chatId, Aa);
-})
+    bot.sendMessage(chatId, "oh, hello!");
+});
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
 
