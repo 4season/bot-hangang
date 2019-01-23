@@ -8,22 +8,16 @@ const getToken = (function(){
     };
 })();
 
+/**
 var Aa = "오늘의 한강 수온은...";
 var Bb = "도네요. 함께가자!";
+**/
 
-bot.onText(/\/today_hangang_temperature (.+)/, (msg, match) => {
+bot.on('/today_hangang', (msg) => {
 
     const chatId = msg.chat.id;
-    const resp = match[1];
 
-    bot.sendMessage(chatId, resp);
-});
-
-bot.onText(/^\/say_hello (.+)$/, function (msg, match) {
-  var name = match[1];
-  bot.sendMessage(msg.chat.id, 'Hello ' + name + '!').then(function () {
-    // reply sent!
-  });
+    bot.sendMessage(chatId, 'Hello!');
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
