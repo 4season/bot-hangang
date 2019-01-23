@@ -1,4 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
+const bot = new TelegramBot(getToken(), {polling: true});
 
 const getToken = (function(){
     const token = process.env.TELEGRAM_TOKEN;
@@ -7,7 +8,15 @@ const getToken = (function(){
     };
 })();
 
-const bot = new TelegramBot(getToken(), {polling: true});
+var Aa = "오늘의 한강 수온은...";
+var Bb = "도네요. 함께가자!";
+
+bot.onText(/\/오늘의한강수온/, (msg, match) => {
+
+    const chatId = msg.chat.id;
+
+    bot.sendMessage(chatId, Aa);
+})
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
 
