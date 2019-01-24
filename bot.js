@@ -12,10 +12,23 @@ const getToken = (function(){
 
 const bot = new TelegramBot(getToken(), {polling: true});
 
-bot.onText(/\/hello (.+)/, (msg, match) => {
+bot.onText(/\/today_hangang_temperature (.+)/, (msg, match) => {
+	const chatld = msg.chat.id;
+	
+	bot.sendMessage(chatld, 'Hi');
+});
+
+bot.onText(/\/echo (.+)/, (msg, match) => {
 
     const chatId = msg.chat.id;
     const resp = match[1];
 
     bot.sendMessage(chatId, resp);
+});
+
+bot.onText(/\/echo@hangangboy (.+)/, (msg, match) => {
+	const chatld = msg.chat.id;
+	const resp = match[1];
+	
+	bot.sendMessage(chatld, resp);
 });
