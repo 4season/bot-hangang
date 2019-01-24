@@ -14,13 +14,11 @@ var arrNumber = new Array();
 
 const router = express.Router();
 const request = require('request');
-
-router.get("/crawlingTest", function(req, res, next){
-    let url = "https://www.wpws.kr/hangang/";
   
-    request(url, function(error, response, body){
-        arrNumber[0] = body;
-    });
+request("https://www.wpws.kr/hangang/", function(error, response, body){
+    	
+	arrNumber[0] = body;
+	
 });
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
@@ -28,6 +26,8 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
 	const chatld = msg.chat.id;
 	
 	bot.sendMessage(chatld, arrNumber[0]);
+	arrNumber.length = 0;
+	
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -36,4 +36,5 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
     const resp = match[1];
 
     bot.sendMessage(chatId, resp);
+    
 });
