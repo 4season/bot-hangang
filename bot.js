@@ -4,7 +4,6 @@ const m2 = require('cheerio');
 const m3 = require('iconv-lite');
 
 const bot = new TelegramBot(getToken(), {polling: true});
-const chatld = msg.chat.id;
 const router = express.Router();
 const getToken = (function(){
     const token = process.env.TELEGRAM_TOKEN;
@@ -18,6 +17,8 @@ var Bb = "도입니다.\nWould you want to join me?";
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
 	m1("https://www.wpws.kr/hangang/", function(error, response, body){
+    
+    const chatld = msg.chat.id;
 
     bot.sendMessage(chatld, body);
     
@@ -26,7 +27,8 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
 
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
-	
+    
+    const chatId = msg.chat.id;
     const resp = match[1];
     
     bot.sendMessage(chatId, resp);
