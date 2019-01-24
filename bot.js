@@ -26,9 +26,9 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
     bot.sendMessage(chatId, resp);
 });
 
-bot.onText(/\/echo@hangangboy (.+)/, (msg, match) => {
-	const chatld = msg.chat.id;
-	const resp = match[1];
-	
-	bot.sendMessage(chatld, resp);
+bot.onText(/\/echo/, (msg) => {
+
+    const chatId = msg.chat.id;
+
+    bot.sendMessage(chatId, "따라할 말을 입력해 주세요.");
 });
