@@ -14,6 +14,7 @@ var Aa = "오늘의 한강 수온은...";
 var Bb = "도입니다.\nWould you want to join me?";
 var arrNumber = new Array();
 
+/*
 bot.onText(/\/today_hangang_temperature/, (msg) => {
 
 	request("https://www.wpws.kr/hangang/", function(error, response, body){
@@ -22,6 +23,8 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
 	
 	});
 });
+*/
+
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
 	
