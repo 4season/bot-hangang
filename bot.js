@@ -32,7 +32,6 @@ function handleResponse(response) {
  
     result = $("#AUTHOR").text();                     // id가 AUTHOR인 요소를 선택
     result2 = result.replace(/(^\s+|\s+$)/g, "");     // 앞뒤의 화이트 스페이스를 제거
-    console.log("Find by id : AUTHOR -> " + result2);
   });
 }
 
