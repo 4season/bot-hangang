@@ -12,7 +12,7 @@ const getToken = (function(){
 
 const bot = new TelegramBot(getToken(), {polling: true});
 
-bot.on('/today_hangang_temperature', (msg) => {
+bot.onText(/\/today_hangang_temperature/, (msg) => {
 	const chatld = msg.chat.id;
 	
 	bot.sendMessage(chatld, 'Hi');
