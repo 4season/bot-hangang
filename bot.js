@@ -1,7 +1,7 @@
-const TelegramBot = require('node-telegram-bot-api');
-const m1 = require('request');
-const m2 = require('cheerio');
-const m3 = require('iconv-lite');
+import TelegramBot from 'node-telegram-bot-api';
+import { get } from 'request';
+import m2 from 'cheerio';
+import m3 from 'iconv-lite';
 
 const bot = new TelegramBot(getToken(), {polling: true});
 const getToken = (function(){
@@ -15,7 +15,7 @@ var Aa = "오늘의 한강 수온은...";
 var Bb = "도입니다.\nWould you want to join me?";
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
-    m1.get({uri:"https://www.wpws.kr/hangang/"}, function (error, response, body) {
+    get({uri:"https://www.wpws.kr/hangang/"}, function (error, response, body) {
 
         const chatld = msg.chat.id;
 
