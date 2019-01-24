@@ -15,7 +15,8 @@ var Aa = "오늘의 한강 수온은...";
 var Bb = "도입니다.";
 
 var requestOptions = { 
-    method: "GET" ,uri: "https://www.wpws.kr/hangang/" ,
+    method: "GET" ,
+    uri: "https://www.wpws.kr/hangang/" ,
     headers: { "User-Agent": "Mozilla/5.0" } ,
     encoding: null 
 };
@@ -26,7 +27,7 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
 
         var strContents = new Buffer(body);
         const chatld = msg.chat.id;
-        
+
         bot.sendMessage(chatld, iconv.decode(strContents, 'EUC-KR').toString()); 
 
     });
