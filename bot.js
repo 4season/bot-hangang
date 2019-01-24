@@ -21,7 +21,7 @@ router.get("/crawlingTest", function(req, res, next){
     request(url, function(error, response, body){
         arrNumber[0] = body;
     });
-})
+});
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
 	
