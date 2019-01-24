@@ -1,4 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
+const bot = new TelegramBot(getToken(), {polling: true});
 
 const getToken = (function(){
     const token = process.env.TELEGRAM_TOKEN;
@@ -8,37 +9,25 @@ const getToken = (function(){
 })();
 
 var Aa = "오늘의 한강 수온은...";
-var Bb = "도네요. 함께가자!";
-var http = require('http');
-var cheerio = require('cheerio');
-var options = {
-    hostname: 'www.wpws.kr/hangang'
-  };
+var Bb = "도입니다.\nWould you want to join me?";
+var arrNumber = new Array();
 
-const bot = new TelegramBot(getToken(), {polling: true});
+const router = express.Router();
+const request = require('request');
 
-function handleResponse(response) {
-  var serverData = '';
-  response.on('data', function (chunk) {
-    serverData += chunk;
-  });
-  response.on('end', function () {
- 
-    var $ = cheerio.load(serverData);
- 
-    var result = $(".bash").text();            // 클래스가 bash인 요소를 선택
-    var result2 = result.replace(/(^\s+|\s+$)/g, ""); // 앞뒤의 화이트 스페이스를 제거
-    console.log("Find by class : bash -> " + result2);
- 
-    result = $("#AUTHOR").text();                     // id가 AUTHOR인 요소를 선택
-    result2 = result.replace(/(^\s+|\s+$)/g, "");     // 앞뒤의 화이트 스페이스를 제거
-  });
-}
+router.get("/crawlingTest", function(req, res, next){
+    let url = "https://www.wpws.kr/hangang/";
+  
+    request(url, function(error, response, body){
+        arrNumber[0] = body;
+    });
+})
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
+	
 	const chatld = msg.chat.id;
 	
-	bot.sendMessage(chatld, handleResponse(response));
+	bot.sendMessage(chatld, arrNumber[0]);
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
