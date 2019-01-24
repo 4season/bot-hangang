@@ -7,15 +7,15 @@ const getToken = (function(){
     };
 })();
 
-//var Aa = "오늘의 한강 수온은...";
-//var Bb = "도네요. 함께가자!";
+var Aa = "오늘의 한강 수온은...";
+var Bb = "도네요. 함께가자!";
 
 const bot = new TelegramBot(getToken(), {polling: true});
 
 bot.onText(/\/today_hangang_temperature/, (msg) => {
 	const chatld = msg.chat.id;
 	
-	bot.sendMessage(chatld, 'Hi');
+	bot.sendMessage(chatld, Aa + Bb);
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
