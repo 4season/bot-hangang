@@ -16,6 +16,7 @@ var Aa = "오늘의 한강 수온은...";
 var Bb = "도입니다. 혹시 시간되신다면 저랑 함께하실래요?";
 var Cc = "오늘은 날이 아닌가봅니다... 독서실이나 가죠.";
 
+/*
 bot.onText(/\/today_hangang_temperature/, (msg) => {
 	
 	const chatld = msg.chat.id;
@@ -32,7 +33,7 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
         });
     });
 });
-
+*/
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
     
