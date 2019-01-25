@@ -21,17 +21,17 @@ bot.onText(/\/today_hangang_temperature/, (msg) => {
 	const chatld = msg.chat.id;
 	
 	request('node-fetch')('http://hangang.dkserver.wo.tc/', function(error, response, body) {
-		.then(res => res.json())
-		.then(json => {
+        fetch.then(res => res.json())
+		fetch.then(json => {
 			if(json.result) {
-				bot.sendMessage(chatld, Aa + {json["temp"]} + Bb);
-				}
-				else {
-					bot.sendMessage(chatld, Cc);
-					}
-			});
+                bot.sendMessage(chatld, Aa + `${json["temp"]}` + Bb);
+            }
+            else {
+                bot.sendMessage(chatld, Cc);
+            }
+        });
+    });
 });
-
 
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
