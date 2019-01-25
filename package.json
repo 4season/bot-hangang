@@ -1,27 +1,31 @@
 {
-    "name": "telegram-bot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node index.js",
-      "dev_start": "export $(cat .config) && node index.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/johngrib/telegram-bot.git"
-    },
-    "author": "John Grib",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/johngrib/telegram-bot/issues"
-    },
-    "homepage": "https://github.com/johngrib/telegram-bot#readme",
-    "dependencies": {
-      "express": "^4.16.3",
-      "get-json": "0.0.3",
-      "node-telegram-bot-api": "^0.30.0",
-      "sync-request": "6.0.0"
-    }
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev_start": "export $(cat .config) && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johngrib/telegram-bot.git"
+  },
+  "author": "John Grib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johngrib/telegram-bot/issues"
+  },
+  "homepage": "https://github.com/johngrib/telegram-bot#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "get-json": "0.0.3",
+    "iconv-lite": "^0.4.24",
+    "node-fetch": "^2.3.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "request": "^2.88.0",
+    "sync-request": "6.0.0"
   }
+}
