@@ -1,8 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
-const request = require('request');
-const cheerio = require('cheerio');
-const iconv = require('iconv-lite');
-const fetch = require('node-fetch');
+//const request = require('request');
+//const cheerio = require('cheerio');
+//const iconv = require('iconv-lite');
+//const fetch = require('node-fetch');
 
 const bot = new TelegramBot(getToken(), {polling: true});
 const getToken = (function(){
